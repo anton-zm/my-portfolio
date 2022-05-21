@@ -1,0 +1,43 @@
+const config = {
+    stack: [
+        'JavaScript',
+        'HTML5',
+        'CSS3',
+        'Vue.js',
+        'Nuxt.js',
+        'React',
+        'Next.js',
+        'MobX',
+        'Redux',
+        'React Native',
+        'TypeScript',
+        'npm',
+        'yarn',
+        'Git',
+        'GitHub',
+        'Gitlab',
+        'BEM',
+        'Grid',
+        'Flexbox',
+        'Express.js',
+        'MongoDB',
+        'Figma',
+        'Node.js',
+        'Responsive',
+        'Jest',
+        'REST API',
+        'Android Studio',
+        'XCode',
+        'MacOS',
+        'Styled Components',
+        'Tailwind',
+        'Ant Design',
+        'Telegram API',
+        'Telegram Bot API',
+        'Team Work',
+        'Jira',
+        'Google'
+    ]
+}
+
+export default config

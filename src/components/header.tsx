@@ -19,7 +19,10 @@ const HeaderWrapper = styled.header`
 `
 const HeaderIcon = styled.a`
   text-decoration: none;
-  width: 150px;
+  min-width: 150px;
+  @media screen and (max-width: 768px) {
+    min-width: 0;
+  }
 `
 const GHIcon = styled.img`
   width: 30px;
@@ -32,11 +35,16 @@ const MyGH = styled.p`
   transition: 0.3s;
   letter-spacing: 1px;
   cursor: pointer;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `
 const Menu = styled.nav`
   display: flex;
+  flex: 1;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   @media screen and (max-width: 540px) {
     flex-direction: column;
   }
@@ -94,7 +102,7 @@ export const Header = observer(() => {
 
     return (
         <HeaderWrapper id="top">
-            <Content className="flex-row between">
+            <Content className="flex-row between centered-align">
               <HeaderIcon
                 className="flex-row centered-align"
                 href="https://github.com/anton-zm"
@@ -110,6 +118,7 @@ export const Header = observer(() => {
                 <MenuLink onClick={() => ScrollToSmooth('#projects')}>{lang.projects}</MenuLink>
                 <MenuLink onClick={() => ScrollToSmooth('#contacts')}>{lang.contacts}</MenuLink>
                 <MenuLink onClick={() => ScrollToSmooth('#certificates')}>{lang.certificates}</MenuLink>
+                <MenuLink onClick={() => ScrollToSmooth('#stack')}>{lang.stack}</MenuLink>
               </Menu>
               <div className="flex-row">
                 <LangIcon

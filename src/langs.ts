@@ -4,9 +4,10 @@ const en = {
     contacts: 'Contacts',
     projects: 'Projects',
     certificates: 'Certificates',
-    portfolio: 'My portfolio',
-    web_dev: 'Web development',
-    my_gh: 'My GitHub'
+    portfolio: 'My Portfolio',
+    web_dev: 'Web Development',
+    my_gh: 'My GitHub',
+    stack: 'My Stack'
 }
 
 type Lingo = typeof en
@@ -17,7 +18,8 @@ const ru: Lingo = {
     certificates: 'Сертификаты',
     portfolio: 'Портфолио',
     web_dev: 'Вэб-разработка',
-    my_gh: 'Мой GitHub'
+    my_gh: 'Мой GitHub',
+    stack: 'Умею в...'
 }
 
 const langs = { ru, en }
