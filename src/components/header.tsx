@@ -8,6 +8,7 @@ import { useLang } from "../langs"
 import { useStore } from "../store/use-store"
 import { ScrollToSmooth } from "../utils/helpers"
 import { useState } from "react"
+import FadeIn from 'react-fade-in';
 
 const HeaderWrapper = styled.header`
     width: 100%;
@@ -103,7 +104,7 @@ export const Header = observer(() => {
                 onMouseLeave={() => setGh(false)}
               >
                 <GHIcon src={github} alt="GitHub" />
-                {gh && <MyGH>{lang.my_gh}</MyGH>}
+                {gh && <FadeIn><MyGH>{lang.my_gh}</MyGH></FadeIn>}
               </HeaderIcon>
               <Menu>
                 <MenuLink onClick={() => ScrollToSmooth('#projects')}>{lang.projects}</MenuLink>
