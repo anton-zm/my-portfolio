@@ -7,6 +7,7 @@ import gbIcon from "../assets/images/gb.jpg"
 import { useLang } from "../langs"
 import { useStore } from "../store/use-store"
 import { ScrollToSmooth } from "../utils/helpers"
+import { useState } from "react"
 
 const HeaderWrapper = styled.header`
     width: 100%;
@@ -16,13 +17,25 @@ const HeaderWrapper = styled.header`
     padding: 20px 0;
 `
 const HeaderIcon = styled.a`
-    display: block;
-    width: 30px;
-    margin-right: 15px;
+  text-decoration: none;
+  width: 150px;
+`
+const GHIcon = styled.img`
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+`
+const MyGH = styled.p`
+  color: white;
+  font-family: 'Raleway', Arial, Helvetica, sans-serif;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  cursor: pointer;
 `
 const Menu = styled.nav`
   display: flex;
   flex-direction: row;
+  align-items: center;
   @media screen and (max-width: 540px) {
     flex-direction: column;
   }
@@ -35,6 +48,9 @@ const MenuLink = styled.p`
   transition: 0.3s;
   letter-spacing: 1px;
   cursor: pointer;
+    :hover {
+      opacity: 0.7;
+    }
   @media screen and (max-width: 540px) {
     text-align: center;
     margin-bottom: 8px;
@@ -63,6 +79,7 @@ export const Header = observer(() => {
     const lang = useLang()
     const store = useStore()
     const isEng = store.Lang === 'en'
+    const [gh, setGh] = useState(false)
     
     const changeLang = (event: any) => {
       if (!event.target.classList.contains('active')) {
@@ -76,13 +93,17 @@ export const Header = observer(() => {
 
     return (
         <HeaderWrapper id="top">
-            <Content className="flex-row between align-centered">
+            <Content className="flex-row between">
               <HeaderIcon
+                className="flex-row centered-align"
                 href="https://github.com/anton-zm"
                 target="_blanc"
                 title="My GitHub"
+                onMouseOver={() => setGh(true)}
+                onMouseLeave={() => setGh(false)}
               >
-                <img src={github} alt="GitHub" className="w100" />
+                <GHIcon src={github} alt="GitHub" />
+                {gh && <MyGH>{lang.my_gh}</MyGH>}
               </HeaderIcon>
               <Menu>
                 <MenuLink onClick={() => ScrollToSmooth('#projects')}>{lang.projects}</MenuLink>

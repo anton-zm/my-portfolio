@@ -5,7 +5,8 @@ const en = {
     projects: 'Projects',
     certificates: 'Certificates',
     portfolio: 'My portfolio',
-    web_dev: 'Web development'
+    web_dev: 'Web development',
+    my_gh: 'My GitHub'
 }
 
 type Lingo = typeof en
@@ -15,7 +16,8 @@ const ru: Lingo = {
     projects: 'Проекты',
     certificates: 'Сертификаты',
     portfolio: 'Портфолио',
-    web_dev: 'Вэб-разработка'
+    web_dev: 'Вэб-разработка',
+    my_gh: 'Мой GitHub'
 }
 
 const langs = { ru, en }

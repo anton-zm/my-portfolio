@@ -8,11 +8,13 @@ import { Footer } from './components/footer';
 import { Projects } from './components/projects';
 import { Certificates } from './components/certificates';
 import { Contacts } from './components/contacts';
+import { TitlePanel } from './components/title-panel';
 
 const App = observer(() => {
   return (
     <Ctx.Provider value={Store}>
       <Header />
+      <TitlePanel />
       <Projects />
       <Certificates />
       <Contacts />
