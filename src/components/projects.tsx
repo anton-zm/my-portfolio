@@ -31,10 +31,13 @@ export const Projects = observer(() => {
     const projects = useProjectsData()
 
     return (
-        <Section cn="flex-column centered-align" title={lang.projects}>
+        <Section id="projects" cn="flex-column centered-align" title={lang.projects}>
            <Grid>
                {projects.map((e: Project) => (
-                   <ProjectCard project={e} key={e.img} />
+                   <ProjectCard 
+                        project={e} 
+                        key={e.img}
+                   />
                ))}
            </Grid>
         </Section>
