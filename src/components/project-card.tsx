@@ -6,20 +6,47 @@ type IProps = {
 }
 
 const Wrapper = styled.figure`
-    
+    cursor: pointer;
+    position: relative;
+        :hover > .card__title {
+            visibility: visible;
+            }
 `
 const Img = styled.img`
-    
+    width: 100%;
 `
 const Title = styled.figcaption`
-    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: rgb(134, 130, 130);
+    font-size: 32px;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    visibility: hidden;
+    text-align: center;
+
+    @media screen and (max-width: 1140px) {
+        font-size: 24px;
+    }
+    @media screen and (max-width: 600px) {
+        font-size: 18px;
+        padding: 10px;
+    }
 `
 
 export const ProjectCard = ({project}: IProps) => {
     return (
         <Wrapper>
             <Img src={project.img} alt={project.title} />
-            <Title>{project.title}</Title>
+            <Title className="card__title">{project.title}</Title>
         </Wrapper>
     )
 }
@@ -31,22 +58,6 @@ export const ProjectCard = ({project}: IProps) => {
   </figure>
 </template>
 
-<script>
-import Popup from '@/components/popup'
-export default {
-  props: ['title', 'alt', 'img'],
-  components: {
-    Popup,
-  },
-
-  data() {
-    return {
-      popupImg: ``,
-      popup: false,
-    }
-  },
-}
-</script>
 
 <style scoped>
 .card {
