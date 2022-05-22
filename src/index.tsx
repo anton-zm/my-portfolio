@@ -10,6 +10,7 @@ import { Certificates } from './components/certificates';
 import { Contacts } from './components/contacts';
 import { TitlePanel } from './components/title-panel';
 import { GoUpBtn } from './components/go-up';
+import { StackSection } from './components/stack-section';
 
 const App = observer(() => {
   const [upBtn, setUpBtn] = useState(false)
@@ -36,6 +37,7 @@ const App = observer(() => {
       <Header />
       <TitlePanel />
       <Projects />
+      <StackSection />
       <Certificates />
       <Contacts />
       <Footer />
