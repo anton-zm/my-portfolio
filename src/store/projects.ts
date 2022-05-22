@@ -1,13 +1,31 @@
+import { Lang, Project } from "../types"
 import { useStore } from "./use-store"
+import pxm from '../assets/images/projects/pointx-m.jpg'
+import px from '../assets/images/projects/pointx.jpg'
+import mesto_react from '../assets/images/projects/mesto-react.jpg'
+import subj from '../assets/images/projects/this.jpg'
+import cancer from '../assets/images/projects/cancer.jpg'
+import stv34 from '../assets/images/projects/stvorka34.jpg'
+import a100a from '../assets/images/projects/a100a.jpg'
+import test1 from '../assets/images/projects/test1.jpg'
+import test2 from '../assets/images/projects/mailfit.jpg'
+import news from '../assets/images/projects/newsapi.jpg'
+import s11 from '../assets/images/projects/sprint11.jpg'
+import s10 from '../assets/images/projects/sprint10.jpg'
+import s4 from '../assets/images/projects/sprint4.jpg'
+import cars from '../assets/images/projects/cars.jpg'
+import s2 from '../assets/images/projects/sprint2.jpg'
 
-const projects = {
+type IProjects = Record<Lang, Project[]>
+
+const projects:IProjects = {
     ru: [
         {
           title: 'Мобильное приложение',
           description:
             'Мобильное приложение для прохождения маркетинговых опросов за вознаграждение',
-          stack: 'React Native, Typescript, MobX, Android Studio',
-          img: '/projects/pointx-m.jpg',
+          stack: 'React Native, Typescript, MobX',
+          img: pxm,
           url: '',
           github: '',
           nda: true
@@ -17,7 +35,7 @@ const projects = {
           description:
             'Личный кабинет финансового вэб-приложения',
           stack: 'React, Typescript, MobX, Styled Components',
-          img: '/projects/pointx.jpg',
+          img: px,
           url: 'https://dash.point-x.co/',
           github: '',
           nda: true
@@ -26,8 +44,8 @@ const projects = {
           title: 'Социальная сеть',
           description:
             'Учебная работа Яндекс.Практикум по дополнительному курсу React. Социальная сеть, в которой студенты Практикума могут менять свои данные, добавлять и удалять свои картинки, отмечать понравившиеся. Данные хранятся на сервере и добываются при помощи запросов в fetch.',
-          stack: 'React, React App Create, Hooks',
-          img: '/projects/mesto-react.jpg',
+          stack: 'React',
+          img: mesto_react,
           url: 'https://anton-zm.github.io/mesto-react/',
           github: 'https://github.com/anton-zm/mesto-react',
           nda: false
@@ -35,8 +53,8 @@ const projects = {
         {
           title: 'Сайт-портфолио',
           description: 'Сайт портфолио вэб разработчика.',
-          stack: 'Nuxt.js',
-          img: '/projects/this.jpg',
+          stack: 'React, Typescript',
+          img: subj,
           url: 'http://antonzm.ru/',
           github: 'https://github.com/anton-zm/portfolio',
           nda: false
@@ -46,30 +64,19 @@ const projects = {
           description:
             'Командная работа по созданию сайта для благотворительного фонда.',
           stack: 'Nuxt.js',
-          img: '/projects/cancer.jpg',
+          img: cancer,
           url: 'https://raklechitsa.ru/',
           github: 'https://github.com/anton-zm/rak-lechitsa',
           nda: false
         },
         {
-          title: 'Онлайн калькулятор стоимости',
-          description:
-            'Онлайн калькулятор для расчета стоимости окон для организации по производству и установке окон и дверей. ',
-          stack: 'Nuxt.js, MongoDB, Express.js',
-          img: '/projects/stvorka34calc.jpg',
-          url: 'https://stvorka34.ru/calculation',
-          github:
-            'https://github.com/anton-zm/stvorka34/blob/main/pages/calculation.vue',
-            nda: true
-        },
-        {
           title: 'Сайт оконной компании',
           description:
             'Сайт для организации по производству и установке окон и дверей. Содержит около 100 страниц. ',
-          stack: 'Nuxt.js, MongoDB, Express.js',
-          img: '/projects/stvorka34.jpg',
+          stack: 'React, Next.js, Typescript, MongoDB, Express.js',
+          img: stv34,
           url: 'https://stvorka34.ru',
-          github: 'https://github.com/anton-zm/stvorka34',
+          github: 'https://github.com/anton-zm/stvorka34-next',
           nda: true
         },
         {
@@ -77,7 +84,7 @@ const projects = {
           description:
             'Работа для портфолио. Одностраничный сайт многоквартирного дома.',
           stack: 'Nuxt.js',
-          img: '/projects/a100a.jpg',
+          img: a100a,
           url: 'https://a100a.netlify.app/',
           github: 'https://github.com/anton-zm/romanov-nuxt',
           nda: false
@@ -86,7 +93,7 @@ const projects = {
           title: 'Тестовое задание',
           description: 'Тестовое задание по вёрстке и JS',
           stack: 'Nuxt.js',
-          img: '/projects/test1.jpg',
+          img: test1,
           url: 'https://anton-zm.github.io/test-for-mkomov/',
           github: 'https://github.com/anton-zm/test-for-mkomov',
           nda: false
@@ -95,18 +102,9 @@ const projects = {
           title: 'Тестовое задание',
           description: 'Тестовое задание по вёрстке и JS',
           stack: 'Nuxt.js, Swiper Slider',
-          img: '/projects/mailfit.jpg',
+          img: test2,
           url: 'https://nervous-goldwasser-71f821.netlify.app/',
           github: 'https://github.com/anton-zm/test-for-mailfit',
-          nda: false
-        },
-        {
-          title: 'Сайт компании',
-          description: 'Сайт для организации по остеклению балконов и лоджий. ',
-          stack: 'Nuxt.js, Express.js',
-          img: '/projects/balkony.jpg',
-          url: 'https://balkony34.ru',
-          github: 'https://github.com/anton-zm/balkony',
           nda: false
         },
         {
@@ -115,7 +113,7 @@ const projects = {
             'Учебная работа Яндекс.Практикум. Сервис по поиску новостей по запросу с регистрацией и авторизацией пользователей. Пользователь может сохранить понравившиеся статьи в "Избранное".',
           stack:
             'HTML, CSS, JS, Fetch API, ES6 Классы, RegExp, Webpack, Express.js, MongoDB',
-          img: '/projects/newsapi.jpg',
+          img: news,
           url: 'https://anton-zm.github.io/news-frontend/',
           github: 'https://github.com/anton-zm/news-frontend',
           nda: false
@@ -125,7 +123,7 @@ const projects = {
           description:
             'Учебная работа Яндекс.Практикум. Социальная сеть, в которой студенты Практикума могут менять свои данные, добавлять и удалять свои картинки, отмечать понравившиеся. Данные хранятся на сервере и добываются при помощи запросов в fetch.',
           stack: 'HTML, CSS, JS, Fetch API, ES6 Классы, RegExp, Webpack',
-          img: '/projects/sprint11.jpg',
+          img: s11,
           url: 'https://anton-zm.github.io/sprint-11/',
           github: 'https://github.com/anton-zm/sprint-11',
           nda: false
@@ -135,7 +133,7 @@ const projects = {
           description:
             'Учебная работа Яндекс.Практикум. Валидация формы при помощи регулярных выражений.',
           stack: 'JS, RegExp',
-          img: '/projects/sprint10.jpg',
+          img: s10,
           url: 'https://anton-zm.github.io/sprint-10/',
           github: 'https://github.com/anton-zm/sprint-10',
           nda: false
@@ -145,7 +143,7 @@ const projects = {
           description:
             'Учебная работа Яндекс.Практикум. Вёрстка для ПК с использованием методологии БЭМ, Flexbox, Grid.',
           stack: 'HTML, CSS',
-          img: '/projects/sprint4.jpg',
+          img: s4,
           url: 'https://anton-zm.github.io/sprint-4/',
           github: 'https://github.com/anton-zm/sprint-4',
           nda: false
@@ -155,7 +153,7 @@ const projects = {
           description:
             'Учебная работа для тренировки. Вёрстка для ПК с использованием методологии БЭМ, Flexbox.',
           stack: 'HTML, CSS',
-          img: '/projects/cars.jpg',
+          img: cars,
           url: 'https://anton-zm.github.io/training-layout/',
           github: 'https://github.com/anton-zm/training-layout',
           nda: false
@@ -165,7 +163,7 @@ const projects = {
           description:
             'Учебная работа Яндекс.Практикум. Вёрстка для ПК с использованием методологии БЭМ, Flexbox и простых CSS анимаций.',
           stack: 'HTML, CSS',
-          img: '/projects/sprint2.jpg',
+          img: s2,
           url: 'https://anton-zm.github.io/sprint-2/',
           github: 'https://github.com/anton-zm/sprint-2',
           nda: false
@@ -176,8 +174,8 @@ const projects = {
           title: 'Mobile App',
           description:
             'Mobile app for passing marketing surveys for a reward',
-          stack: 'React Native, Typescript, MobX, Android Studio',
-          img: '/projects/pointx-m.jpg',
+          stack: 'React Native, Typescript, MobX',
+          img: pxm,
           url: '/',
           github: '',
           nda: true
@@ -187,7 +185,7 @@ const projects = {
           description:
             'Financial Web App Personal Area ',
           stack: 'React, Typescript, MobX, Styled Components',
-          img: '/projects/pointx.jpg',
+          img: px,
           url: 'https://dash.point-x.co/',
           github: '',
           nda: true
@@ -196,8 +194,8 @@ const projects = {
           title: 'Social Network (React)',
           description:
             'Educational extra React work in Yandex.Practicum. A social network in which the students of the Practicum can change their data, add and delete their pictures, mark their favorites. The data is stored on the server and retrieved using Fetch API requests.',
-          stack: 'React, React App Create, Hooks',
-          img: '/projects/mesto-react.jpg',
+          stack: 'React',
+          img: mesto_react,
           url: 'https://anton-zm.github.io/mesto-react/',
           github: 'https://github.com/anton-zm/mesto-react',
           nda: false
@@ -205,8 +203,8 @@ const projects = {
         {
           title: 'This website',
           description: "Web developer's website portfolio ",
-          stack: 'Nuxt.js',
-          img: '/projects/this.jpg',
+          stack: 'React, Typescript',
+          img: subj,
           url: 'http://antonzm.ru/',
           github: 'https://github.com/anton-zm/portfolio',
           nda: false
@@ -215,30 +213,19 @@ const projects = {
           title: 'Charity foundation website',
           description: 'Teamwork to create a website for a charitable foundation.',
           stack: 'Nuxt.js',
-          img: '/projects/cancer.jpg',
+          img: cancer,
           url: 'https://raklechitsa.ru/',
           github: 'https://github.com/anton-zm/rak-lechitsa',
           nda: false
         },
         {
-          title: 'Online cost calculator',
-          description:
-            'Online calculator for calculating the cost of windows for an organization for the production and installation of windows and doors. ',
-          stack: 'Nuxt.js, MongoDB, Express.js',
-          img: '/projects/stvorka34calc.jpg',
-          url: 'https://stvorka34.ru/calculation',
-          github:
-            'https://github.com/anton-zm/stvorka34/blob/main/pages/calculation.vue',
-            nda: true
-        },
-        {
           title: 'Windows ann doors company website',
           description:
             'Website for the organization for the production and installation of windows and doors. Contains about 100 pages. ',
-          stack: 'Nuxt.js, MongoDB, Express.js',
-          img: '/projects/stvorka34.jpg',
+          stack: 'React, Next.js, Typescript, MongoDB, Express.js',
+          img: stv34,
           url: 'https://stvorka34.ru',
-          github: 'https://github.com/anton-zm/stvorka34',
+          github: 'https://github.com/anton-zm/stvorka34-next',
           nda: true
         },
         {
@@ -246,7 +233,7 @@ const projects = {
           description:
             'Pet project for portfolio. One-page website for an apartment building.',
           stack: 'Nuxt.js',
-          img: '/projects/a100a.jpg',
+          img: a100a,
           url: 'https://a100a.netlify.app/',
           github: 'https://github.com/anton-zm/romanov-nuxt',
           nda: false
@@ -255,7 +242,7 @@ const projects = {
           title: 'Test task',
           description: 'Layout and JS test task on Nuxt.js',
           stack: 'Nuxt.js',
-          img: '/projects/test1.jpg',
+          img: test1,
           url: 'https://anton-zm.github.io/test-for-mkomov/',
           github: 'https://github.com/anton-zm/test-for-mkomov',
           nda: false
@@ -264,19 +251,9 @@ const projects = {
           title: 'Test task',
           description: 'Layout and JS test task on Nuxt.js',
           stack: 'Nuxt.js, Swiper Slider',
-          img: '/projects/mailfit.jpg',
+          img: test2,
           url: 'https://nervous-goldwasser-71f821.netlify.app/',
           github: 'https://github.com/anton-zm/test-for-mailfit',
-          nda: false
-        },
-        {
-          title: 'Website',
-          description:
-            'Website for the organization for the loggia and balcony glazing.',
-          stack: 'Nuxt.js, Express.js',
-          img: '/projects/balkony.jpg',
-          url: 'https://balkony34.ru',
-          github: 'https://github.com/anton-zm/balkony',
           nda: false
         },
         {
@@ -285,7 +262,7 @@ const projects = {
             'Educational work in Yandex.Practicum. Service for searching news on demand with registration and authorization of users. The user can save the articles he likes to "Favorites".',
           stack:
             'HTML, CSS, JS, Fetch API, ES6 Classes, RegExp, Webpack, Express.js, MongoDB',
-          img: '/projects/newsapi.jpg',
+          img: news,
           url: 'https://anton-zm.github.io/news-frontend/',
           github: 'https://github.com/anton-zm/news-frontend',
           nda: false
@@ -295,7 +272,7 @@ const projects = {
           description:
             'Educational work in Yandex.Practicum. A social network in which the students of the Practicum can change their data, add and delete their pictures, mark their favorites. The data is stored on the server and retrieved using Fetch API requests.',
           stack: 'HTML, CSS, JS, Fetch API, ES6 Classes, RegExp, Webpack',
-          img: '/projects/sprint11.jpg',
+          img: s11,
           url: 'https://anton-zm.github.io/mesto-sprint11/',
           github: 'https://github.com/anton-zm//mesto-sprint11/',
           nda: false
@@ -305,7 +282,7 @@ const projects = {
           description:
             'Educational work in Yandex.Practicum. Form validation with regular expressions patterns.',
           stack: 'JS, RegExp',
-          img: '/projects/sprint10.jpg',
+          img: s10,
           url: 'https://anton-zm.github.io/sprint-10/',
           github: 'https://github.com/anton-zm/sprint-10',
           nda: false
@@ -315,7 +292,7 @@ const projects = {
           description:
             'Educational work in Yandex.Practicum. Desktop layout using a BEM metodology, Flexbox, Grid.',
           stack: 'HTML, CSS',
-          img: '/projects/sprint4.jpg',
+          img: s4,
           url: 'https://anton-zm.github.io/sprint-4/',
           github: 'https://github.com/anton-zm/sprint-4',
           nda: false
@@ -325,7 +302,7 @@ const projects = {
           description:
             'Educational work for training. Desktop layout using a BEM metodology, Flexbox',
           stack: 'HTML, CSS',
-          img: '/projects/cars.jpg',
+          img: cars,
           url: 'https://anton-zm.github.io/training-layout/',
           github: 'https://github.com/anton-zm/training-layout',
           nda: false
@@ -335,7 +312,7 @@ const projects = {
           description:
             'Educational work in Yandex.Practicum. Desktop layout using a BEM metodology, Flexbox and simple CSS animations',
           stack: 'HTML, CSS',
-          img: '/projects/sprint2.jpg',
+          img: s2,
           url: 'https://anton-zm.github.io/sprint-2/',
           github: 'https://github.com/anton-zm/sprint-2',
           nda: false

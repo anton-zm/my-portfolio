@@ -16,7 +16,7 @@ const Title = styled.h1`
     font-size: 4rem;
     font-weight: 100;
 `
-const SubTitle = styled.h2`
+const SubTitle = styled.p`
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
     font-size: 1.75rem;
     text-transform: uppercase;
