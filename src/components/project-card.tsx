@@ -1,7 +1,7 @@
 import { useState } from "react"
 import styled from "styled-components"
 import { Project } from "../types"
-import { ProjectModal } from "./project-modal"
+import { ProjectModal } from "./modals/project-modal"
 
 const Wrapper = styled.figure`
     cursor: pointer;

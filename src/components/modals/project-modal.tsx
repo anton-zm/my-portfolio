@@ -1,10 +1,9 @@
 import styled from "styled-components"
-import { Project } from "../types"
-import close from "../assets/images/close.png"
+import { Project } from "../../types"
 import { observer } from "mobx-react-lite"
-import { useLang } from "../langs"
+import { useLang } from "../../langs"
 import { useState } from "react"
-import { Modal } from "./modals/modal"
+import { Modal } from "./modal"
 
 const Img = styled.img`
     max-height: 80vh;
@@ -17,12 +16,7 @@ const Img = styled.img`
         display: none;
     }
 `
-const CloseIcon = styled.img`
-    position: absolute;
-    top: -30px;
-    right: -30px;
-    cursor: pointer;
-`
+
 const ContentWrapper = styled.div`
     flex-direction: row;
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
@@ -69,7 +63,6 @@ export const ProjectModal = observer(({onClose, project}: IProps) => {
     return (
         <Modal onClose={onClose}>
             <div className="flex-row w100">
-                <CloseIcon src={close} onClick={onClose} />
                 <Img src={project.img} alt={project.title} />
                 <div className="flex-column w100 between">
                     <Title>{project.title}</Title>
