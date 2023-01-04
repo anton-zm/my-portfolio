@@ -7,8 +7,6 @@ import gbIcon from "../assets/images/gb.jpg"
 import { useLang } from "../langs"
 import { useStore } from "../store/use-store"
 import { ScrollToSmooth } from "../utils/helpers"
-import { useState } from "react"
-import FadeIn from 'react-fade-in';
 
 const HeaderWrapper = styled.header`
     width: 100%;
@@ -29,16 +27,7 @@ const GHIcon = styled.img`
   height: 30px;
   margin-right: 15px;
 `
-const MyGH = styled.p`
-  color: white;
-  font-family: 'Raleway', Arial, Helvetica, sans-serif;
-  transition: 0.3s;
-  letter-spacing: 1px;
-  cursor: pointer;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`
+
 const Menu = styled.nav`
   display: flex;
   flex: 1;
@@ -88,7 +77,6 @@ export const Header = observer(() => {
     const lang = useLang()
     const store = useStore()
     const isEng = store.Lang === 'en'
-    const [gh, setGh] = useState(false)
     
     const changeLang = (event: any) => {
       if (!event.target.classList.contains('active')) {
@@ -108,11 +96,8 @@ export const Header = observer(() => {
                 href="https://github.com/anton-zm"
                 target="_blanc"
                 title="My GitHub"
-                onMouseOver={() => setGh(true)}
-                onMouseLeave={() => setGh(false)}
               >
                 <GHIcon src={github} alt="GitHub" />
-                {gh && <FadeIn><MyGH>{lang.my_gh}</MyGH></FadeIn>}
               </HeaderIcon>
               <Menu>
                 <MenuLink onClick={() => ScrollToSmooth('#projects')}>{lang.projects}</MenuLink>
