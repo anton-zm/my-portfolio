@@ -15,11 +15,33 @@ import s10 from '../assets/images/projects/sprint10.jpg'
 import s4 from '../assets/images/projects/sprint4.jpg'
 import cars from '../assets/images/projects/cars.jpg'
 import s2 from '../assets/images/projects/sprint2.jpg'
+import cg from '../assets/images/projects/cg2.png'
+import cable from '../assets/images/projects/cableman.webp'
 
 type IProjects = Record<Lang, Project[]>
 
 const projects:IProjects = {
     ru: [
+      {
+        title: 'Раздел сайта',
+        description:
+          'Один из разделов сайта телеком компании',
+        stack: 'Nuxt, Pinia',
+        img: cable,
+        url: 'https://tvmap.cableman.ru/',
+        github: '',
+        nda: true
+      },
+      {
+        title: 'Сайт компании',
+        description:
+          'Сайт IT компании',
+        stack: 'NextJs, Typescript, MobX, Styled Components',
+        img: cg,
+        url: 'https://www.communigate.ru/',
+        github: '',
+        nda: true
+      },
         {
           title: 'Мобильное приложение',
           description:
@@ -170,6 +192,26 @@ const projects:IProjects = {
         },
     ],
     en: [
+      {
+        title: 'Website Section',
+        description:
+          'Telecom company website section',
+        stack: 'Nuxt, Pinia',
+        img: cable,
+        url: 'https://tvmap.cableman.ru/',
+        github: '',
+        nda: true
+      },
+      {
+        title: 'Website',
+        description:
+          'IT company website',
+        stack: 'NextJs, Typescript, MobX, Styled Components',
+        img: cg,
+        url: 'https://www.communigate.ru/',
+        github: '',
+        nda: true
+      },
         {
           title: 'Mobile App',
           description:
