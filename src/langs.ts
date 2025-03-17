@@ -1,4 +1,4 @@
-import { useStore } from "./store/use-store"
+import { store } from './store';
 
 const en = {
     contacts: 'Contacts',
@@ -10,9 +10,9 @@ const en = {
     stack: 'My Stack',
     watch: 'Watch in browser',
     nda: 'Sorry, NDA project'
-}
+};
 
-type Lingo = typeof en
+type Lingo = typeof en;
 
 const ru: Lingo = {
     contacts: 'Контакты',
@@ -24,11 +24,10 @@ const ru: Lingo = {
     stack: 'Умею в...',
     watch: 'Смотреть в браузере',
     nda: 'Сожалеем, NDA проект'
-}
+};
 
-const langs = { ru, en }
+const langs = { ru, en };
 
 export const useLang = () => {
-    const store = useStore()
-    return langs[store.Lang]
-}
+    return langs[store.Lang];
+};

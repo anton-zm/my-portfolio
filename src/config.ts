@@ -8,7 +8,9 @@ const config = {
         'React',
         'Next.js',
         'MobX',
+        'Pinia',
         'Redux',
+        'Redux Toolkit',
         'React Native',
         'TypeScript',
         'npm',
@@ -31,6 +33,9 @@ const config = {
         'MacOS',
         'Styled Components',
         'Tailwind',
+        'Anime.js',
+        'Chart.js',
+        'Flutter',
         'Ant Design',
         'Telegram API',
         'Telegram Bot API',
@@ -38,6 +43,6 @@ const config = {
         'Jira',
         'Google'
     ]
-}
+};
 
-export default config
+export default config;

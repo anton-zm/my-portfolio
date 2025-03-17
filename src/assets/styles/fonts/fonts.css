@@ -1,15 +1,15 @@
 @font-face {
-  src: url(./Raleway-Regular.ttf);
-  font-family: 'Raleway';
-  font-weight: normal;
+    src: url(./Raleway-Regular.ttf);
+    font-family: 'Raleway';
+    font-weight: normal;
 }
 @font-face {
-  src: url(./Raleway-Bold.ttf);
-  font-family: 'Raleway';
-  font-weight: bold;
+    src: url(./Raleway-Bold.ttf);
+    font-family: 'Raleway';
+    font-weight: bold;
 }
 @font-face {
-  src: url(./Raleway-Thin.ttf);
-  font-family: 'Raleway';
-  font-weight: 200;
+    src: url(./Raleway-Thin.ttf);
+    font-family: 'Raleway';
+    font-weight: 200;
 }

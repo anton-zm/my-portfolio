@@ -1,18 +1,43 @@
-import { useState } from "react"
-import styled from "styled-components"
-import { Project } from "../types"
-import { ProjectModal } from "./modals/project-modal"
+import { useState } from 'react';
+import styled from 'styled-components';
+import { Project } from '../types';
+import { ProjectModal } from './modals/project-modal';
+import { store } from '../store';
+
+export const ProjectCard = ({ project }: { project: Project }) => {
+    const [modal, setModal] = useState(false);
+    const title = project.title[store.Lang];
+
+    return (
+        <>
+            {modal && (
+                <ProjectModal
+                    project={project}
+                    onClose={() => setModal(false)}
+                />
+            )}
+            <Wrapper onClick={() => setModal(true)}>
+                <Img src={project.img} alt={title} loading='lazy' />
+                <Title className="card__title">{title}</Title>
+            </Wrapper>
+        </>
+    );
+};
 
 const Wrapper = styled.figure`
     cursor: pointer;
     position: relative;
-        :hover > .card__title {
-            visibility: visible;
-            }
-`
+    border-radius: 8px;
+    overflow: hidden;
+    :hover > .card__title {
+        opacity: 1;
+    }
+`;
 const Img = styled.img`
     width: 100%;
-`
+    height: 100%;
+    object-fit: cover;
+`;
 const Title = styled.figcaption`
     position: absolute;
     top: 0;
@@ -28,8 +53,9 @@ const Title = styled.figcaption`
     font-size: 32px;
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
     font-weight: 100;
-    visibility: hidden;
+    opacity: 0;
     text-align: center;
+    transition: opacity 0.3s;
 
     @media screen and (max-width: 1140px) {
         font-size: 24px;
@@ -38,18 +64,4 @@ const Title = styled.figcaption`
         font-size: 18px;
         padding: 10px;
     }
-`
-
-export const ProjectCard = ({project}:{project: Project}) => {
-    const [modal, setModal] = useState(false)
-
-    return (
-        <>
-            {modal && <ProjectModal project={project} onClose={() => setModal(false)} />}
-            <Wrapper onClick={() => setModal(true)}>
-                <Img src={project.img} alt={project.title} />
-                <Title className="card__title">{project.title}</Title>
-            </Wrapper>
-        </>
-    )
-}
+`;

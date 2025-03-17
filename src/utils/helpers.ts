@@ -1,6 +1,6 @@
 export const ScrollToSmooth = (id: string) => {
-    const target = document.querySelector(id)
+    const target = document.querySelector(id);
     target?.scrollIntoView({
-            behavior: 'smooth'
-        })
-}
+        behavior: 'smooth'
+    });
+};

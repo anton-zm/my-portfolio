@@ -1,17 +1,16 @@
-import { makeAutoObservable } from "mobx"
-import { Lang } from "../types"
+import { makeAutoObservable } from 'mobx';
+import { Lang } from '../types';
 
-export class Storage {
-    _lang: Lang = 'en'
+class Storage {
+    Lang: Lang = 'en';
 
     constructor() {
-        makeAutoObservable(this)
+        makeAutoObservable(this);
     }
 
-    setLang(v:Lang){
-        this._lang = v
-    }
-    get Lang(){
-        return this._lang
+    setLang(v: Lang) {
+        this.Lang = v;
     }
 }
+
+export const store = new Storage();
